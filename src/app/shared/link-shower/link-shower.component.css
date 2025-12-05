@@ -1,0 +1,12 @@
+.listing {
+  background: var(--accent-color);
+  border-radius: 30px;
+  /*padding-bottom: 30px;*/
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.listing-id {
+  margin: 20px;
+}

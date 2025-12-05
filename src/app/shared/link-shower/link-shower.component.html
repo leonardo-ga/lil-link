@@ -1,0 +1,9 @@
+@for(link of linksToShow().links; track $index) {
+    <section class="listing">
+        <p class="listing-id">{{ link.id }}</p>
+        <div>
+            <div class="listing-short">{{ link.short }}</div>
+            <a [routerLink]="['/details', link.id]">Learn More</a>
+        </div>
+    </section>
+}
