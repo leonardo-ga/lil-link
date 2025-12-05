@@ -23,7 +23,7 @@ export class MockApiInterceptor implements HttpInterceptor {
   }
 
   private fromJson(file: string): Observable<HttpResponse<any>> {
-    return from(fetch(`/assets/mocks/${file}`).then(r => r.json()))
+    return from(fetch(`assets/mocks/${file}`).then(r => r.json()))
       .pipe(map(body => new HttpResponse({ status: 200, body })));
   }
 }
