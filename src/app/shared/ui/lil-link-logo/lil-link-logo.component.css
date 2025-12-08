@@ -1,0 +1,53 @@
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #007bff;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.logo:hover {
+  transform: scale(1.05); /* subtle hover effect */
+}
+
+/* Icon container */
+.icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+/* Chain link parts */
+.link-part {
+  position: absolute;
+  width: 12px;
+  height: 4px;
+  border: 3px solid #007bff;
+  border-radius: 4px;
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+
+.part1 {
+  transform: rotate(45deg);
+  top: 2px;
+  left: 2px;
+}
+
+.part2 {
+  transform: rotate(-45deg);
+  top: 14px;
+  left: 10px;
+}
+
+.logo:hover .part1 {
+  transform: rotate(45deg) translate(1px, -1px);
+}
+
+.logo:hover .part2 {
+  transform: rotate(-45deg) translate(-1px, 1px);
+}

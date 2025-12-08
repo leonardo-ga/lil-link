@@ -51,9 +51,25 @@
 }
 
 /* Input field */
+.input-wrapper {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  border-radius: 0; /* unified with select */
+}
+
+.separator {
+  padding: 0.5rem 0.5rem;
+  user-select: none; /* prevents selecting the slash */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 .input {
   flex: 2;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
   border: none;
   font-size: 1rem;
   background-color: #fff;
@@ -63,7 +79,6 @@
 }
 
 .input:focus {
-  outline: 2px solid rgba(0,123,255,0.2);
   background-color: #f9f9f9;
 }
 
