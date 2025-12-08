@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./features/header/header.component";
 
 @Component({
@@ -12,4 +12,14 @@ import { HeaderComponent } from "./features/header/header.component";
 })
 export class AppComponent {
   title = 'lil-link';
+
+  private router: Router = inject(Router);
+
+  constructor() {
+    const originalPath = window.location.hash.replace('#', '');
+    if(originalPath.startsWith('/link/')) {
+      const short = originalPath.split('/')[2];
+      this.router.navigate(['/link', short]);
+    }
+  }
 }
