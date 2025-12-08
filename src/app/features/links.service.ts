@@ -9,11 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class LinksService {
 
-   baseUrl = 'http://localhost:4200/api';
+  baseUrl = 'http://localhost:4200/api';
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAllLinks() : Observable<LinksToShow> {
+  getAllLinks(): Observable<LinksToShow> {
     const url = this.baseUrl + "/links-to-show";
     return this.http.get<LinksToShow>(url);
   }

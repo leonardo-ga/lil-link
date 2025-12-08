@@ -26,6 +26,13 @@ export class MockApiInterceptor implements HttpInterceptor {
       return this.fromJson('link-by-short_' + short + '.json');
     }
 
+    // Matches /api/wishlist-by-name/<any-string>
+    const wishlistNameLinkRegex = /\/api\/wishlist-by-name\/([A-Za-z0-9_-]+)$/;
+    if (wishlistNameLinkRegex.test(req.url) && method === 'GET') {
+      const name = req.url.split('/').pop();
+      return this.fromJson('wishlist-by-name_' + name + '.json');
+    }
+
     return next.handle(req);
   }
 

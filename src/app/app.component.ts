@@ -17,9 +17,11 @@ export class AppComponent {
 
   constructor() {
     const originalPath = window.location.hash.replace('#', '');
+    const link = originalPath.split('/')[2];
     if(originalPath.startsWith('/link/')) {
-      const short = originalPath.split('/')[2];
-      this.router.navigate(['/link', short]);
+      this.router.navigate(['/link', link]);
+    } else if(originalPath.startsWith('/wishlist/')) {
+      this.router.navigate(['/wishlist', link]);
     }
   }
 }

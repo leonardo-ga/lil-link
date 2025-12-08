@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { DetailsComponent } from './features/details/details.component';
 import { LinkSorterComponent } from './features/link-sorter/link-sorter.component';
+import { WishlistSorterComponent } from './features/wishlist-sorter/wishlist-sorter.component';
 
 export const routes: Routes = [
     {
@@ -18,5 +19,10 @@ export const routes: Routes = [
         path: 'link/:link',
         component: LinkSorterComponent,
         title: 'Link sorter'
+    },
+        {
+        path: 'wishlist/:link',
+        component: WishlistSorterComponent,
+        title: 'Wishlist sorter'
     }
 ];
