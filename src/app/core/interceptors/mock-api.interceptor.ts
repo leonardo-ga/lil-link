@@ -13,10 +13,17 @@ export class MockApiInterceptor implements HttpInterceptor {
     }
 
     // Matches /api/link-to-show/<any-number>
-    const linkRegex = /\/api\/link-to-show\/\d+$/;
+    const linkRegex = /\/api\/link-by-id\/\d+$/;
     if (linkRegex.test(req.url) && method === 'GET') {
       const id = req.url.split('/').pop();
-      return this.fromJson('link-to-show_' + id + '.json');
+      return this.fromJson('link-by-id_' + id + '.json');
+    }
+
+    // Matches /api/link-by-short/<any-string>
+    const shortLinkRegex = /\/api\/link-by-short\/([A-Za-z0-9_-]+)$/;
+    if (shortLinkRegex.test(req.url) && method === 'GET') {
+      const short = req.url.split('/').pop();
+      return this.fromJson('link-by-short_' + short + '.json');
     }
 
     return next.handle(req);

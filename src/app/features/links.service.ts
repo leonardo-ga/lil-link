@@ -19,8 +19,13 @@ export class LinksService {
   }
 
   getLinkById(id: number): Observable<LinkToShow | undefined> {
-    const url = this.baseUrl + "/link-to-show/" + id;
+    const url = this.baseUrl + "/link-by-id/" + id;
     return this.http.get<LinkToShow | undefined>(url)
+  }
+
+  getLinkByShort(short: string): Observable<LinkToShow | undefined> {
+    const url = this.baseUrl + "/link-by-short/" + short;
+    return this.http.get<LinkToShow | undefined>(url);
   }
 
 }
