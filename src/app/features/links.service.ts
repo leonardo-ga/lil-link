@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class LinksService {
 
-  baseUrl = 'http://localhost:4200/api';
+  private baseUrl = 'http://localhost:4200/api';
 
   constructor(private http: HttpClient) { }
 
@@ -18,14 +18,14 @@ export class LinksService {
     return this.http.get<LinksToShow>(url);
   }
 
-  getLinkById(id: number): Observable<LinkToShow | undefined> {
+  getLinkById(id: number): Observable<LinkToShow> {
     const url = this.baseUrl + "/link-by-id/" + id;
-    return this.http.get<LinkToShow | undefined>(url)
+    return this.http.get<LinkToShow>(url)
   }
 
-  getLinkByShort(short: string): Observable<LinkToShow | undefined> {
+  getLinkByShort(short: string): Observable<LinkToShow> {
     const url = this.baseUrl + "/link-by-short/" + short;
-    return this.http.get<LinkToShow | undefined>(url);
+    return this.http.get<LinkToShow>(url);
   }
 
 }

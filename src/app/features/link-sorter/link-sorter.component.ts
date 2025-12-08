@@ -18,7 +18,7 @@ export class LinkSorterComponent {
 
   constructor() {
     this.link = this.route.snapshot.params['link'];
-    this.linksService.getLinkByShort(this.link).subscribe((link: LinkToShow | undefined) => {
+    this.linksService.getLinkByShort(this.link).subscribe((link: LinkToShow) => {
       this.linkToShow = link;
       if (!!this.linkToShow && !!this.linkToShow.original) {
         window.location.href = this.linkToShow?.original;

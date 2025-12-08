@@ -18,7 +18,7 @@ export class DetailsComponent {
 
   constructor() {
     this.linkId = Number(this.route.snapshot.params['id']);
-    this.linksService.getLinkById(this.linkId).subscribe((link : LinkToShow | undefined) => {
+    this.linksService.getLinkById(this.linkId).subscribe((link : LinkToShow) => {
       this.linkToShow = link;
     })
   }
