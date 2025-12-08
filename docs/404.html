@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=/lil-link/index.html">
-    <script>
-      // Hard redirect for JS-based fallback
-      window.location.replace("/lil-link/index.html");
-    </script>
-  </head>
-  <body>
-  </body>
+
+<head>
+  <meta http-equiv="refresh" content="0; url=/lil-link/index.html">
+  <script>
+    var original = window.location.pathname.replace('/lil-link', '');
+
+    // Redirect to Angular root BUT store the original path in a hash
+    window.location.replace('/lil-link/index.html#' + original);
+  </script>
+</head>
+
+<body>
+</body>
+
 </html>
