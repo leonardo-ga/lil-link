@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { LinkToShow } from '../../shared/models/link-to-show';
+import { Link } from '../../shared/models/link';
 import { LinksService } from '../links.service';
 
 @Component({
@@ -14,12 +14,12 @@ export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   linksService: LinksService = inject(LinksService);
   linkId = -1;
-  linkToShow : LinkToShow | undefined;
+  link : Link | undefined;
 
   constructor() {
     this.linkId = Number(this.route.snapshot.params['id']);
-    this.linksService.getLinkById(this.linkId).subscribe((link : LinkToShow) => {
-      this.linkToShow = link;
+    this.linksService.getLinkById(this.linkId).subscribe((link : Link) => {
+      this.link = link;
     })
   }
 }

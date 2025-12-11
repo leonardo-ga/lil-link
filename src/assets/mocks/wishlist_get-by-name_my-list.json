@@ -1,4 +1,6 @@
 {
+    "id": 1,
+    "name": "my-list",
     "links": [
         {
             "id": 1,
@@ -10,6 +12,5 @@
             "original": "www.apple.com\\product_id=Uo103-391-3-13&color=red\\it-IT",
             "short": "macbook-air-m4"
         }
-    ],
-    "num": 2
+    ]
 }

@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LinksService } from '../links.service';
-import { LinkToShow } from '../../shared/models/link-to-show';
+import { Link } from '../../shared/models/link';
 
 @Component({
   selector: 'app-link-sorter',
@@ -13,15 +13,15 @@ import { LinkToShow } from '../../shared/models/link-to-show';
 export class LinkSorterComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   linksService: LinksService = inject(LinksService);
-  link: string;
-  linkToShow: LinkToShow | undefined;
+  shortUrl: string;
+  link: Link | undefined;
 
   constructor() {
-    this.link = this.route.snapshot.params['link'];
-    this.linksService.getLinkByShort(this.link).subscribe((link: LinkToShow) => {
-      this.linkToShow = link;
-      if (!!this.linkToShow && !!this.linkToShow.original) {
-        window.location.href = this.linkToShow?.original;
+    this.shortUrl = this.route.snapshot.params['link'];
+    this.linksService.getLinkByShort(this.shortUrl).subscribe((link: Link) => {
+      this.link = link;
+      if (!!this.link && !!this.link.originalUrl) {
+        window.location.href = this.link?.originalUrl;
       }
       //TODO: see if we can redirect faster...
       //TODO: make loading/waiting page??

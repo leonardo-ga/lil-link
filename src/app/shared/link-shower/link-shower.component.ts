@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { LinksToShow } from '../models/links-to-show';
 import { RouterLink } from '@angular/router';
+import { Link } from '../models/link';
 
 @Component({
   selector: 'app-link-shower',
@@ -11,6 +11,6 @@ import { RouterLink } from '@angular/router';
 })
 export class LinkShowerComponent {
 
-  linksToShow = input.required<LinksToShow>();
+  links = input.required<Link[]>();
 
 }

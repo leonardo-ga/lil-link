@@ -1,31 +1,31 @@
 import { Injectable } from '@angular/core';
-import { LinksToShow } from '../shared/models/links-to-show';
-import { LinkToShow } from '../shared/models/link-to-show';
+import { Link } from '../shared/models/link';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LinksService {
 
-  private baseUrl = 'http://localhost:4200/api';
+  private baseUrl = environment.apiBaseUrl + '/link';
 
   constructor(private http: HttpClient) { }
 
-  getAllLinks(): Observable<LinksToShow> {
-    const url = this.baseUrl + "/links-to-show";
-    return this.http.get<LinksToShow>(url);
+  getAllLinks(): Observable<Link[]> {
+    const url = this.baseUrl + "/get-all";
+    return this.http.get<Link[]>(url);
   }
 
-  getLinkById(id: number): Observable<LinkToShow> {
-    const url = this.baseUrl + "/link-by-id/" + id;
-    return this.http.get<LinkToShow>(url)
+  getLinkById(id: number): Observable<Link> {
+    const url = this.baseUrl + "/get-by-id/" + id;
+    return this.http.get<Link>(url)
   }
 
-  getLinkByShort(short: string): Observable<LinkToShow> {
-    const url = this.baseUrl + "/link-by-short/" + short;
-    return this.http.get<LinkToShow>(url);
+  getLinkByShort(short: string): Observable<Link> {
+    const url = this.baseUrl + "/get-by-short/" + short;
+    return this.http.get<Link>(url);
   }
 
 }

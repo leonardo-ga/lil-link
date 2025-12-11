@@ -1,7 +1,7 @@
-import { LinksToShow } from "./links-to-show";
+import { Link } from "./link";
 
 export interface Wishlist {
     id: number;
     name: string;
-    links_to_show: LinksToShow;
+    links: Link[];
 }
