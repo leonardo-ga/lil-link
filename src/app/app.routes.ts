@@ -18,11 +18,11 @@ export const routes: Routes = [
     {
         path: 'link/:link',
         component: LinkSorterComponent,
-        title: 'Link sorter'
+        title: 'Link'
     },
         {
         path: 'wishlist/:link',
         component: WishlistSorterComponent,
-        title: 'Wishlist sorter'
+        title: 'Wishlist'
     }
 ];
