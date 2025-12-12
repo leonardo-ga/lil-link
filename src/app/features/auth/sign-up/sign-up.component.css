@@ -1,0 +1,72 @@
+/* Form container */
+.sign-up-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Input wrapper */
+.email-wrapper,
+.password-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Inputs */
+.input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input:focus {
+    border-color: var(--primary-color); /* nice purple/blue accent */
+    box-shadow: 0 0 5px rgba(79, 70, 229, 0.4);
+    outline: none;
+}
+
+/* Button */
+.btn {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--primary-color); /* primary accent color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    background-color: var(--disabled-color);
+    cursor: not-allowed;
+}
+
+/* Placeholder styling */
+.input::placeholder {
+    color: #a1a1aa;
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .sign-up-form {
+        padding: 20px;
+        margin: 30px 10px;
+    }
+}

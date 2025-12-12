@@ -3,5 +3,22 @@
         <app-lil-link-logo></app-lil-link-logo>
     </a>
 
-    <div></div>
+    <div class="auth-btn-wrapper">
+        @if (!authService.isLoggedIn()) {
+        <a  class="sign-up-btn"
+            [routerLink]="['/sign-up']">
+            sign up
+        </a>
+        <a  class="sign-in-btn"
+            [routerLink]="['/sign-in']">
+            sign in
+        </a>
+        }
+        @else {
+        <a  class="sign-out-btn"
+            (click)="authService.signOut()">
+            sign out
+        </a>
+        }
+    </div>
 </header>

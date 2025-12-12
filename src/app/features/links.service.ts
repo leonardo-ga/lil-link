@@ -20,7 +20,7 @@ export class LinksService {
 
   getLinkById(id: number): Observable<Link> {
     const url = this.baseUrl + "/get-by-id/" + id;
-    return this.http.get<Link>(url)
+    return this.http.get<Link>(url);
   }
 
   getLinkByShort(short: string): Observable<Link> {

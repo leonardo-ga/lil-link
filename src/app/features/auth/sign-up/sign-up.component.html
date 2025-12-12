@@ -1,0 +1,28 @@
+<form 
+    (ngSubmit)="onSignUp()"
+    class="sign-up-form unified"
+>
+    <div class="email-wrapper">
+        <input 
+            type="email"
+            placeholder="e-mail"
+            [value]="email()"
+            (input)="email.set($any($event.target).value)"
+            class="input"
+        />
+    </div>
+
+    <div class="password-wrapper">
+        <input 
+            type="password"
+            placeholder="password"
+            [value]="password()"
+            (input)="password.set($any($event.target).value)"
+            class="input"
+        />
+    </div>
+
+    <button type="submit" class="btn" [disabled]="disableButton()">
+        sign up
+    </button>
+</form>
