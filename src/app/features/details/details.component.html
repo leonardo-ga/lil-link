@@ -1,7 +1,9 @@
 <section class="listing">
     <p class="listing-id">{{ link?.id }}</p>
     <div>
-        <div class="listing-original">{{ link?.originalUrl }}</div>
+        <a  href="{{link?.originalUrl}}"
+            class="listing-original">{{ link?.originalUrl }}
+        </a>
         <div class="listing-short">{{ link?.shortUrl }}</div>
     </div>
 </section>
